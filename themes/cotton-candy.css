@@ -1,0 +1,245 @@
+/* Rosify theme: Cotton Candy. Original stylesheet made for Rosify.
+   Dreamy pink, lilac and peach cloud gradient, glossy bubble cards, strawberry glow. */
+
+:root,
+.encore-dark-theme,
+.encore-light-theme,
+.encore-base-set,
+.encore-inverted-light-set,
+.encore-increased-contrast-set {
+  --rosify-bg: #ffeaf5;
+  --rosify-panel: rgba(255, 255, 255, 0.58);
+  --rosify-raised: rgba(255, 255, 255, 0.72);
+  --rosify-text: #4a2140;
+  --rosify-subtext: #8f5f83;
+  --rosify-accent: #ff5fa8;
+  --rosify-accent-2: #ff8fc7;
+  --rosify-accent-3: #b794ff;
+  --rosify-accent-strong: #d62a85;
+  --rosify-border: rgba(255, 143, 199, 0.45);
+  --rosify-glow: 0 6px 22px rgba(255, 95, 168, 0.55), 0 0 40px rgba(255, 143, 199, 0.5);
+  --rosify-gradient: linear-gradient(135deg, #ff7eb6 0%, #ff5fa8 50%, #ff8a9b 100%);
+
+  /* Spotify's own variables (light palette) */
+  --background-base: #ffeaf5;
+  --background-highlight: rgba(255, 95, 168, 0.12);
+  --background-press: rgba(255, 95, 168, 0.2);
+  --background-elevated-base: #fff6fb;
+  --background-elevated-highlight: #ffe3f1;
+  --background-elevated-press: #ffd3e8;
+  --background-tinted-base: rgba(255, 95, 168, 0.1);
+  --background-tinted-highlight: rgba(255, 95, 168, 0.17);
+  --background-tinted-press: rgba(255, 95, 168, 0.25);
+  --text-base: #4a2140;
+  --text-subdued: #8f5f83;
+  --text-bright-accent: #d62a85;
+  --text-announcement: #d62a85;
+  --essential-base: #4a2140;
+  --essential-subdued: #c48bb2;
+  --essential-bright-accent: #ff5fa8;
+  --essential-announcement: #ff5fa8;
+  --decorative-base: #4a2140;
+  --decorative-subdued: #f3b8d6;
+}
+
+html,
+body {
+  background: var(--rosify-bg) !important;
+  color: var(--rosify-text) !important;
+}
+
+/* Pastel cloud sky */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -15%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 38% at 12% 15%, #ffc2e2 0%, transparent 70%),
+    radial-gradient(34% 40% at 88% 12%, #d9c6ff 0%, transparent 70%),
+    radial-gradient(40% 40% at 80% 88%, #ffd9c2 0%, transparent 70%),
+    radial-gradient(34% 36% at 8% 90%, #c2e6ff 0%, transparent 70%),
+    linear-gradient(160deg, #fff0f8, #ffe3f1);
+  animation: rosify-clouds 24s ease-in-out infinite alternate;
+}
+
+@keyframes rosify-clouds {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to   { transform: translate3d(1.5%, 1.5%, 0) scale(1.06); }
+}
+
+.Root__top-container,
+#main {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  color: var(--rosify-text) !important;
+}
+
+/* Frosted candy-glass panels */
+.Root__nav-bar,
+[data-testid="left-sidebar"],
+.main-view-container,
+.main-view-container {
+  background: var(--rosify-panel) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(170%);
+  backdrop-filter: blur(26px) saturate(170%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 26px !important;
+  box-shadow: 0 12px 40px rgba(214, 42, 133, 0.16), inset 0 2px 0 rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+.main-topBar-background,
+.main-topBar-container,
+.main-topBar-overlay {
+  background: rgba(255, 240, 248, 0.6) !important;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+/* Now playing bar */
+.Root__now-playing-bar,
+.main-nowPlayingBar-container,
+[data-testid="now-playing-bar"],
+footer {
+  background: rgba(255, 246, 251, 0.78) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  backdrop-filter: blur(28px) saturate(170%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 -8px 36px rgba(255, 95, 168, 0.18);
+}
+
+/* Bubble cards with a gloss highlight */
+.main-card-card,
+[data-testid="card-click-handler"] {
+  position: relative;
+  background: var(--rosify-raised) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 6px 20px rgba(214, 42, 133, 0.12), inset 0 2px 0 rgba(255, 255, 255, 0.95);
+  transition: transform 0.28s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.25s ease, background 0.25s ease;
+}
+.main-card-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 18px 40px rgba(255, 95, 168, 0.35), inset 0 2px 0 #ffffff;
+}
+.main-card-card img {
+  border-radius: 16px !important;
+}
+
+/* Track rows */
+.main-trackList-trackListRow {
+  border-radius: 14px !important;
+  transition: background 0.18s ease;
+}
+.main-trackList-trackListRow:hover {
+  background: linear-gradient(90deg, rgba(255, 143, 199, 0.32), rgba(183, 148, 255, 0.18)) !important;
+}
+.main-trackList-selected,
+.main-trackList-trackListRow[aria-selected="true"] {
+  background: linear-gradient(90deg, rgba(255, 95, 168, 0.32), rgba(183, 148, 255, 0.22)) !important;
+  box-shadow: inset 4px 0 0 var(--rosify-accent);
+}
+
+/* Strawberry-gloss play buttons */
+button[data-testid="play-button"],
+[data-testid="play-button"],
+.main-playButton-PlayButton,
+.main-playPauseButton-button,
+[data-testid="control-button-playpause"] {
+  background: var(--rosify-gradient) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  box-shadow: var(--rosify-glow), inset 0 2px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 0.22s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.2s ease, filter 0.2s ease;
+}
+button[data-testid="play-button"]:hover,
+[data-testid="play-button"]:hover,
+.main-playButton-PlayButton:hover,
+[data-testid="control-button-playpause"]:hover {
+  transform: scale(1.14);
+  filter: brightness(1.06) saturate(1.1);
+  box-shadow: 0 8px 30px rgba(255, 95, 168, 0.75), 0 0 56px rgba(255, 143, 199, 0.7), inset 0 2px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* Progress and volume bars */
+.progress-bar,
+[data-testid="progress-bar"] {
+  --fg-color: #ff5fa8;
+  --hover-fg-color: #d62a85;
+  --bg-color: rgba(214, 42, 133, 0.18);
+}
+.x-progressBar-fillColor,
+.progress-bar__fg {
+  background: linear-gradient(90deg, #b794ff, #ff8fc7, #ff5fa8) !important;
+  box-shadow: 0 0 10px rgba(255, 95, 168, 0.55);
+}
+
+/* Inputs */
+input,
+textarea,
+[data-testid="search-input"],
+.x-searchInput-searchInputInput {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: var(--rosify-text) !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 2px 6px rgba(214, 42, 133, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px var(--rosify-accent), 0 0 22px rgba(255, 95, 168, 0.4) !important;
+}
+
+/* Headings and links */
+h1, h2, [data-testid="entityTitle"] h1 {
+  color: var(--rosify-text) !important;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.9), 0 4px 22px rgba(255, 95, 168, 0.35);
+}
+a:hover {
+  color: var(--rosify-accent-strong) !important;
+}
+
+.main-navBar-navBarLinkActive,
+[aria-current="page"] {
+  color: var(--rosify-accent-strong) !important;
+}
+
+/* Context menus and popovers */
+[role="menu"],
+[data-testid="context-menu"],
+.main-contextMenu-menu {
+  background: rgba(255, 246, 251, 0.94) !important;
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  border: 1.5px solid #ffffff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 50px rgba(214, 42, 133, 0.28);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff8fc7, #b794ff);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-clip: border-box; }
+
+::selection { background: #ff8fc7 !important; color: #ffffff !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
+  * { transition: none !important; }
+}
+
+.Root__now-playing-bar,
+.main-nowPlayingBar-container,
+[data-testid="now-playing-bar"] {
+  border-radius: 20px !important;
+}

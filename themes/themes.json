@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cotton-candy",
+    "name": "Cotton Candy",
+    "description": "Dreamy pink, lilac and peach clouds with glossy bubble cards and a strawberry glow.",
+    "accent": "#ff5fa8",
+    "background": "#ffeaf5",
+    "filename": "cotton-candy.css"
+  },
+  {
+    "id": "midnight-orchid",
+    "name": "Midnight Orchid",
+    "description": "Neon orchid on deep violet, with a drifting aurora, glass panels and glowing controls.",
+    "accent": "#c77dff",
+    "background": "#0b0716",
+    "filename": "midnight-orchid.css"
+  },
+  {
+    "id": "arctic-glass",
+    "name": "Arctic Glass",
+    "description": "Icy northern-lights gradients, frosted glass and electric cyan highlights.",
+    "accent": "#00b4e6",
+    "background": "#e6f4fc",
+    "filename": "arctic-glass.css"
+  }
+]
